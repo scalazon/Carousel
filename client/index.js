@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import Slider from "react-slick";
 import axios from 'Axios';
 
-export default class CustomArrows extends Component {
+export default class Carousel extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      currentlyDisplayed : {},
+      items: [],
+      currentHover: '',
+      clicked: false //when changed to true, send the asin of the currentHover
+    };
 
   }
 
@@ -21,11 +26,20 @@ export default class CustomArrows extends Component {
   }
 
 
+  // const bc = new BroadcastChannel('product-change');
+  //   bc.onmessage = function (ev) { 
+  //     console.log('Changing the product to ' + ev.data + ', boss!'); 
+  //   } //replace with your handler
+
+
+  // const bc = new BroadcastChannel('product-change');
+  // bc.postMessage('Im an ASIN!');
+
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
@@ -35,22 +49,22 @@ export default class CustomArrows extends Component {
         <h2>Custom Arrows</h2>
         <Slider {...settings}>
           <div>
-            <h3 className="item">1</h3>
+            <h3>1</h3>
           </div>
           <div>
-            <h3 className="item">2</h3>
+            <h3>2</h3>
           </div>
           <div>
-            <h3 className="item">3</h3>
+            <h3>3</h3>
           </div>
           <div>
-            <h3 className="item">4</h3>
+            <h3>4</h3>
           </div>
           <div>
-            <h3 className="item">5</h3>
+            <h3>5</h3>
           </div>
           <div>
-            <h3 className="item">6</h3>
+            <h3>6</h3>
           </div>
         </Slider>
       </div>
@@ -84,4 +98,4 @@ function SamplePrevArrow(props) {
   );
 }
 
-ReactDOM.render(<CustomArrows />, document.getElementById('app'));
+ReactDOM.render(<Carousel />, document.getElementById('app'));
