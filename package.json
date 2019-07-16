@@ -7,12 +7,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "start_local": "nodemon -r dotenv/config server/server.js"
+    "start_local": "nodemon -r dotenv/config server/server.js",
+    "seedDB": "nodemon -r dotenv/config database/seedDbServer.js"
   },
   "dependencies": {
     "axios": "^0.18.1",
     "body-parser": "^1.18.3",
     "express": "^4.17.1",
+    "mongo": "^0.1.0",
     "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
