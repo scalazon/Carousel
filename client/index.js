@@ -17,8 +17,11 @@ export default class Carousel extends Component {
   }
 
   componentDidMount() {
-      axios.get('/')
+      axios.get('/api/items')
         .then((response) => {
+          this.setState({
+            items: response
+          })
           console.log(response);
         }).catch((err) => {
           console.log('Err in componentDidMount:', err);

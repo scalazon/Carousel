@@ -17,7 +17,7 @@ db.once('open', function() {
   console.log('connected to MongoDB')
 });
 
-const productsSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
   url: String,
   asin: String,
   productTitle: String,
@@ -30,46 +30,53 @@ const productsSchema = new mongoose.Schema({
 
 
 });
+
+const Product = db.model('Product', productSchema)
+
+function getRandomSample() {
+  return Product.aggregate([ { $sample: {size: 14} } ])
+}
+
 //finds the category of the currently displayed item
-function findCategory(ASIN) {
-  const dbName = 'hackmazon';
-  const collectionName = 'products';
-  return MongoClient.connect(uri, options)
-    .then(connection => {
-      return connection
-        .db(dbName)
-        .collection(collectionName)
-        .find({ 'asin' : ASIN })
-    })
-    .then(result => {
-      return result;
-    })
-    .catch( err => {
-      console.log('Err in findCategory(db) :', err)
-    })
-}
+// function findCategory(ASIN) {
+//   const dbName = 'hackmazon';
+//   const collectionName = 'products';
+//   return MongoClient.connect(uri, options)
+//     .then(connection => {
+//       return connection
+//         .db(dbName)
+//         .collection(collectionName)
+//         .find({ 'asin' : ASIN })
+//     })
+//     .then(result => {
+//       return result;
+//     })
+//     .catch( err => {
+//       console.log('Err in findCategory(db) :', err)
+//     })
+// }
 
 
 
-//function to get all of the items with the same category as
-//the given ASIN(called category in parameter)
-function sameCategoryItems(category) {
-  const dbName = 'hackmazon';
-  const collectionName = 'products';
-  return MongoClient.connect(uri, options)
-    .then(connection => {
-      return connection
-      .db(dbName)
-      .collection(collectionName)
-      .find({'category' : category})
-    })
-    .then( result => {
-      return result.toArray();
-    })
-    .catch(err => {
-      console.log('Err in sameCategoryItems(db): ', err)
-    })
-}
+// //function to get all of the items with the same category as
+// //the given ASIN(called category in parameter)
+// function sameCategoryItems(category) {
+//   const dbName = 'hackmazon';
+//   const collectionName = 'products';
+//   return MongoClient.connect(uri, options)
+//     .then(connection => {
+//       return connection
+//       .db(dbName)
+//       .collection(collectionName)
+//       .find({'category' : category})
+//     })
+//     .then( result => {
+//       return result.toArray();
+//     })
+//     .catch(err => {
+//       console.log('Err in sameCategoryItems(db): ', err)
+//     })
+// }
 
 // function getNavBarData() {
 //   const dbName = 'hackmazon';
@@ -134,11 +141,7 @@ function deleteAllProducts() {
 }
 
 module.exports = {
+  getRandomSample,
   dataLoader,
   deleteAllProducts,
-  getAll,
-  findCategory,
-  sameCategoryItems,
-  //getNavBarData,
-  getCategories
 };
