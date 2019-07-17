@@ -1,34 +1,63 @@
 import React from 'react';
 import Slider from "react-slick";
+import styled from 'styled-components';
 
-
+const CarouselStyled = styled.div`
+  margin: 20px;
+`
 
 const Carousel = (props) => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
       };
-      //let items = props.items.data;
 
     return (
-        <div margin="10">
+        <CarouselStyled>
           <Slider {...settings}>
       
             {props.items.map((item) => {
               return (
               <div onClick={props.handleClick}> 
-                <img src={`https://hackmazon-images.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="200" width="160"></img>
+                <img src={`https://hackmazon-images.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="200" width="160"
+                onLoad={() => window.dispatchEvent(new Event('resize'))}></img>
                 {item.productTitle} <br></br>
                 ${item.price} 
               </div>
               )
           })}
           </Slider>  
-        </div>
+          </CarouselStyled>
     );
 }
 
@@ -44,7 +73,7 @@ function SampleNextArrow(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "red" }}
+        style={{ ...style, background: "grey" }}
         onClick={onClick}
       />
     );
@@ -55,7 +84,7 @@ function SampleNextArrow(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "green" }}
+        style={{ ...style, display: "block", background: "grey" }}
         onClick={onClick}
       />
     );

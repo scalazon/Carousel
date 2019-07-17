@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 //import Slider from "react-slick";
 import axios from 'Axios';
-import Carousel from './Carousel.js'
+import Carousel from './Carousel.js';
+
+
 
 export default class App extends Component {
   constructor(props) {

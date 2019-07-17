@@ -23,7 +23,8 @@
     "react-loadable": "^5.4.0",
     "react-router-dom": "^4.2.2",
     "react-slick": "^0.24.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^4.3.2"
   },
   "license": "ISC",
   "devDependencies": {
