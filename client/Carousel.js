@@ -7,7 +7,7 @@ const Carousel = (props) => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
@@ -22,7 +22,8 @@ const Carousel = (props) => {
               return (
               <div onClick={props.handleClick}> 
                 <img src={`https://hackmazon-images.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="200" width="160"></img>
-                {item.productTitle} {item.price} 
+                {item.productTitle} <br></br>
+                ${item.price} 
               </div>
               )
           })}
