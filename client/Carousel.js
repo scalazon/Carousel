@@ -6,6 +6,26 @@ const CarouselStyled = styled.div`
   margin: 20px;
 `
 
+const RightArrow = styled.div`
+display: inline-block;
+width: 15px;
+height: 15px;
+border-top: 2px solid #000;
+border-right: 2px solid #000;
+transform: rotate(45deg);
+justify-content: right;
+`
+
+const LeftArrow = styled.div`
+display: inline-block;
+width: 15px;
+height: 15px;
+border-top: 2px solid #000;
+border-right: 2px solid #000;
+transform: rotate(-135deg);
+justify-content: left;
+`
+
 const Carousel = (props) => {
     const settings = {
         dots: false,
@@ -71,22 +91,16 @@ const Carousel = (props) => {
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
-        className={className}
-        style={{ ...style, background: "grey" }}
-        onClick={onClick}
-      />
+      <RightArrow onClick={onClick}>
+      </RightArrow>
     );
   }
   
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "grey" }}
-        onClick={onClick}
-      />
+        <LeftArrow onClick={onClick}>
+        </LeftArrow>
     );
   }
 
