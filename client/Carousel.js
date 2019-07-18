@@ -2,10 +2,14 @@ import React from 'react';
 import Slider from "react-slick";
 import styled from 'styled-components';
 
+
+
+//spacing the carousel
 const CarouselStyled = styled.div`
   margin: 20px;
 `
 
+//css for arrows
 const RightArrow = styled.div`
 display: inline-block;
 width: 15px;
@@ -26,6 +30,8 @@ transform: rotate(-135deg);
 justify-content: left;
 `
 
+
+//component for carousel
 const Carousel = (props) => {
     const settings = {
         dots: false,
@@ -87,7 +93,8 @@ const Carousel = (props) => {
 
 
 
-
+//components for arrows
+//right arrow
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -96,6 +103,8 @@ function SampleNextArrow(props) {
     );
   }
   
+
+  //left arrow
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
