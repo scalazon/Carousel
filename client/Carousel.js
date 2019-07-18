@@ -2,10 +2,14 @@ import React from 'react';
 import Slider from "react-slick";
 import styled from 'styled-components';
 
+
+
+//spacing the carousel
 const CarouselStyled = styled.div`
   margin: 20px;
 `
 
+//css for arrows
 const RightArrow = styled.div`
 display: inline-block;
 width: 15px;
@@ -26,14 +30,30 @@ transform: rotate(-135deg);
 justify-content: left;
 `
 
+const Items = styled.div`
+padding: 5px;
+transition: transform .5s ease;
+
+&:hover {
+  transform: scale(1.1)
+}
+`
+
+const Description = styled.p`
+  padding: 5px;
+  width: 130px;
+`
+
+
+//component for carousel
 const Carousel = (props) => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        nextArrow: <RightArrow />,
+        prevArrow: <LeftArrow />,
         responsive: [
             {
               breakpoint: 1024,
@@ -68,12 +88,12 @@ const Carousel = (props) => {
       
             {props.items.map((item) => {
               return (
-              <div onClick={props.handleClick}> 
-                <img src={`https://hackmazon-images.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="200" width="160"
+              <Items onClick={props.handleClick}> 
+                <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
                 onLoad={() => window.dispatchEvent(new Event('resize'))}></img>
-                {item.productTitle} <br></br>
+                <Description >{item.productTitle} </Description> <br></br>
                 ${item.price} 
-              </div>
+              </Items>
               )
           })}
           </Slider>  
@@ -87,7 +107,8 @@ const Carousel = (props) => {
 
 
 
-
+//components for arrows
+//right arrow
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -96,6 +117,8 @@ function SampleNextArrow(props) {
     );
   }
   
+
+  //left arrow
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (

@@ -6,7 +6,7 @@ const app = express();
 const { getRandomSample } = require('../database/db')
 
 const port = process.env.PORT || 3003;
-app.use(express.static('dist'));
+app.use('/', express.static('dist'));
 app.use(
   bodyParser.json({
     strict: false
