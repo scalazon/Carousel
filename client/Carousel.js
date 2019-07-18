@@ -30,13 +30,27 @@ transform: rotate(-135deg);
 justify-content: left;
 `
 
+const Items = styled.div`
+padding: 5px;
+transition: transform .5s ease;
+
+&:hover {
+  transform: scale(1.1)
+}
+`
+
+const Description = styled.p`
+  padding: 5px;
+  width: 130px;
+`
+
 
 //component for carousel
 const Carousel = (props) => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         nextArrow: <RightArrow />,
         prevArrow: <LeftArrow />,
@@ -74,12 +88,12 @@ const Carousel = (props) => {
       
             {props.items.map((item) => {
               return (
-              <div onClick={props.handleClick}> 
-                <img src={`https://hackmazon-images.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="180" width="140"
+              <Items onClick={props.handleClick}> 
+                <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
                 onLoad={() => window.dispatchEvent(new Event('resize'))}></img>
-                {item.productTitle} <br></br>
+                <Description >{item.productTitle} </Description> <br></br>
                 ${item.price} 
-              </div>
+              </Items>
               )
           })}
           </Slider>  

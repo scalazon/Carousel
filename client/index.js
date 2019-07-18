@@ -18,7 +18,6 @@ export default class App extends Component {
     };
 
   }
-  //this is to commit
 
   componentDidMount() {
       axios.get('/api/items')
