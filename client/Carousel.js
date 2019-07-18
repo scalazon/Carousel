@@ -32,8 +32,8 @@ const Carousel = (props) => {
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        nextArrow: <RightArrow />,
+        prevArrow: <LeftArrow />,
         responsive: [
             {
               breakpoint: 1024,
@@ -69,7 +69,7 @@ const Carousel = (props) => {
             {props.items.map((item) => {
               return (
               <div onClick={props.handleClick}> 
-                <img src={`https://hackmazon-images.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="200" width="160"
+                <img src={`https://hackmazon-images.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="180" width="140"
                 onLoad={() => window.dispatchEvent(new Event('resize'))}></img>
                 {item.productTitle} <br></br>
                 ${item.price} 
