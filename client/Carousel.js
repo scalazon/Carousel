@@ -7,13 +7,13 @@ import styled from 'styled-components';
 
 //spacing the carousel
 const CarouselStyled = styled.div`
-  margin: 20px;
-  width: 100%;
-  height: 100%;
-`
+   margin: 20px;
+   width: 100%;
+   height: 100%;
+ `
 
 //css for arrows
-const RightArrow = styled.div`
+const RightArrowC = styled.div`
 display: inline-block;
 width: 15px;
 height: 15px;
@@ -23,7 +23,7 @@ transform: rotate(45deg);
 justify-content: right;
 `
 
-const LeftArrow = styled.div`
+const LeftArrowC = styled.div`
 display: inline-block;
 width: 15px;
 height: 15px;
@@ -33,7 +33,7 @@ transform: rotate(-135deg);
 justify-content: left;
 `
 
-const Items = styled.div`
+const ItemsC = styled.div`
 padding: 5px;
 transition: transform .5s ease;
 
@@ -42,7 +42,7 @@ transition: transform .5s ease;
 }
 `
 
-const Description = styled.p`
+const DescriptionC = styled.p`
   padding: 5px;
   width: 130px;
 `
@@ -61,8 +61,8 @@ const Carousel = (props) => {
         infinite: true,
         slidesToShow: 6,
         slidesToScroll: 1,
-        nextArrow: <RightArrow />,
-        prevArrow: <LeftArrow />,
+        nextArrow: <RightArrowC />,
+        prevArrow: <LeftArrowC />,
         responsive: [
             {
               breakpoint: 1024,
@@ -100,13 +100,13 @@ const Carousel = (props) => {
       
             {props.items.map((item) => {
               return (
-              <Items key={item.productTitle} onClick={props.handleClick}> 
+              <ItemsC key={item.productTitle} onClick={props.handleClick}> 
                 <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
-                onLoad={() => window.dispatchEvent(new Event('resize'))}
+                //onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => props.sendAsinBroadcast(item.asin)}></img>
-                <Description>{item.productTitle}</Description>
+                <DescriptionC>{item.productTitle}</DescriptionC>
                 <PriceC>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></PriceC>
-              </Items>
+              </ItemsC>
               )
           })}
           </Slider>  
