@@ -44,7 +44,7 @@ const Description = styled.p`
   width: 130px;
 `
 
-const Price = styled.div`
+const PriceC = styled.div`
   color: #B12704;
   display: inline-block;
 `
@@ -101,7 +101,7 @@ const Carousel = (props) => {
                 onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => props.sendAsinBroadcast(item.asin)}></img>
                 <Description>{item.productTitle}</Description>
-                <Price>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></Price>
+                <PriceC>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></PriceC>
               </Items>
               )
           })}
