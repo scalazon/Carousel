@@ -7,7 +7,7 @@ import styled from 'styled-components';
 //spacing the carousel
 const CarouselStyled = styled.div`
   margin: 20px;
-  max-widfth: initial;
+  max-width: initial;
 `
 
 //css for arrows
@@ -98,7 +98,7 @@ const Carousel = (props) => {
             {props.items.map((item) => {
               return (
               <Items onClick={props.handleClick}> 
-                <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="180" width="120"
+                <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
                 onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => props.sendAsinBroadcast(item.asin)}></img>
                 <Description>{item.productTitle}</Description>
