@@ -7,8 +7,7 @@ import styled from 'styled-components';
 //spacing the carousel
 const CarouselStyled = styled.div`
   margin: 20px;
-  width: 100%
-  max-width: 720px // The widest it will go on a responsive website
+  width: 100vw;
 `
 
 //css for arrows
