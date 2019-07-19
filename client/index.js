@@ -22,7 +22,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-      axios.get('/api/items')
+      axios.get('carouseltest-dev.us-east-1.elasticbeanstalk.com/api/items')
         .then((response) => {
           this.setState({
             items: response.data

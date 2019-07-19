@@ -35,7 +35,7 @@ padding: 5px;
 transition: transform .5s ease;
 
 &:hover {
-  transform: scale(1.1)
+  transform: scale(1.04)
 }
 `
 
@@ -44,8 +44,9 @@ const Description = styled.p`
   width: 130px;
 `
 
-const Price = styled.p`
+const Price = styled.div`
   color: #B12704;
+  display: inline-block;
 `
 
 
@@ -99,9 +100,8 @@ const Carousel = (props) => {
                 <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
                 onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => props.sendAsinBroadcast(item.asin)}></img>
-                <Description>{item.productTitle}</Description><br></br>
-                <Price>${item.price} <img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="42"></img>
-                </Price>
+                <Description>{item.productTitle}</Description>
+                <Price>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></Price>
               </Items>
               )
           })}
