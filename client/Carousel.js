@@ -7,7 +7,7 @@ import styled from 'styled-components';
 //spacing the carousel
 const CarouselStyled = styled.div`
   margin: 20px;
-  position: width: 100%; z-index: -1;
+   width: 100%; z-index: -1;
 `
 
 //css for arrows
@@ -55,6 +55,7 @@ const PriceC = styled.div`
 const Carousel = (props) => {
     const settings = {
         dots: false,
+        lazyLoad: true,
         infinite: true,
         slidesToShow: 6,
         slidesToScroll: 1,
