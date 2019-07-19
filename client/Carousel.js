@@ -37,6 +37,8 @@ transition: transform .5s ease;
 &:hover {
   transform: scale(1.04)
 }
+height: 10vh;
+width: 10vw;
 `
 
 const Description = styled.p`
