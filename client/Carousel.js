@@ -7,8 +7,7 @@ import styled from 'styled-components';
 //spacing the carousel
 const CarouselStyled = styled.div`
   margin: 20px;
-  position:absolute;
-  top:500px;
+  height: 100%;
 `
 
 //css for arrows
