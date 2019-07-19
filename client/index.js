@@ -17,6 +17,8 @@ export default class App extends Component {
       itemClicked: false //when changed to true, send the asin of the currentHover
     };
 
+    this.sendAsinBroadcast = this.sendAsinBroadcast.bind(this);
+
   }
 
   componentDidMount() {
@@ -38,14 +40,16 @@ export default class App extends Component {
   //   } //replace with your handler
 
 
-  // const bc = new BroadcastChannel('product-change');
-  // bc.postMessage('Im an ASIN!');
+  sendAsinBroadcast(asin) {
+    const bc = new BroadcastChannel('product-change');
+    bc.postMessage(asin);
+  }
 
   render() {
 
     //let items = this.state.items.data;
     return (
-      <Carousel items={this.state.items} />
+      <Carousel items={this.state.items} sendAsinBroadcast={this.sendAsinBroadcast}/>
 
     );
   }

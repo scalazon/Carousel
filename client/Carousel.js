@@ -44,6 +44,10 @@ const Description = styled.p`
   width: 130px;
 `
 
+const Price = styled.p`
+  color: #B12704;
+`
+
 
 //component for carousel
 const Carousel = (props) => {
@@ -82,6 +86,9 @@ const Carousel = (props) => {
           ]
       };
 
+
+
+
     return (
         <CarouselStyled>
           <Slider {...settings}>
@@ -90,9 +97,11 @@ const Carousel = (props) => {
               return (
               <Items onClick={props.handleClick}> 
                 <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
-                onLoad={() => window.dispatchEvent(new Event('resize'))}></img>
-                <Description >{item.productTitle} </Description> <br></br>
-                ${item.price} 
+                onLoad={() => window.dispatchEvent(new Event('resize'))}
+                onClick={() => props.sendAsinBroadcast(item.asin)}></img>
+                <Description>{item.productTitle}</Description><br></br>
+                <Price>${item.price} <img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="42"></img>
+                </Price>
               </Items>
               )
           })}

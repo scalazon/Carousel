@@ -58,51 +58,6 @@ function getRandomSample() {
 
 
 
-// //function to get all of the items with the same category as
-// //the given ASIN(called category in parameter)
-// function sameCategoryItems(category) {
-//   const dbName = 'hackmazon';
-//   const collectionName = 'products';
-//   return MongoClient.connect(uri, options)
-//     .then(connection => {
-//       return connection
-//       .db(dbName)
-//       .collection(collectionName)
-//       .find({'category' : category})
-//     })
-//     .then( result => {
-//       return result.toArray();
-//     })
-//     .catch(err => {
-//       console.log('Err in sameCategoryItems(db): ', err)
-//     })
-// }
-
-// function getNavBarData() {
-//   const dbName = 'hackmazon';
-//   const collectionName = 'products';
-//   return MongoClient.connect(uri, options)
-//   .then(connection => {
-//     return connection
-//       .db(dbName)
-//       .collection(collectionName)
-//       .find({})
-//       .project({productTitle: 1, asin: 1, category: 1});
-//   })
-//   .then(result => {
-//     return result.toArray();
-//   })
-//   .catch(err => {
-//     console.log('Error in getNavBarData', err);
-//   });
-
-// };
-
-
-
-
-
-
 //functions to populate database using the seedDbServer file
 function dataLoader(JSONarray) {
   const dbName = 'hackmazon';
