@@ -4,9 +4,11 @@ import styled from 'styled-components';
 
 
 
+
 //spacing the carousel
 const CarouselStyled = styled.div`
   margin: 20px;
+  width: 100%;
   height: 100%;
 `
 
