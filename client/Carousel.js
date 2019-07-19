@@ -56,6 +56,9 @@ const Carousel = (props) => {
     const settings = {
         dots: false,
         lazyLoad: true,
+        display: block,
+        width: 100,
+        height: auto,
         infinite: true,
         slidesToShow: 6,
         slidesToScroll: 1,
