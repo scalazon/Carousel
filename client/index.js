@@ -6,7 +6,7 @@ import Carousel from './Carousel.js';
 
 
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -59,7 +59,9 @@ export default class App extends Component {
 
 ReactDOM.render(<App />, document.getElementById('app'));
 
-
+export default function deployCa() {
+  ReactDOM.render(<App />, document.getElementById('app'));
+}
 
 
 
