@@ -99,7 +99,7 @@ const Carousel = (props) => {
             {props.items.map((item) => {
               return (
               <Items onClick={props.handleClick}> 
-                <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
+                <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`}
                 onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => props.sendAsinBroadcast(item.asin)}></img>
                 <Description>{item.productTitle}</Description>
