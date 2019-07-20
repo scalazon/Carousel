@@ -4,6 +4,24 @@ import axios from 'Axios';
 import '@brainhubeu/react-carousel/lib/style.css'
 import Carousel from '@brainhubeu/react-carousel';
 import Icon from 'react-fa';
+import styled from 'styled-components';
+
+
+
+//Styled components
+const Product = styled.div`
+ transition: transform .5s ease;
+ max-width: 20vw;
+
+  &:hover {
+    transform: scale(1.04)
+  }
+`
+
+
+
+
+
 
 
 
@@ -87,13 +105,13 @@ class App extends Component {
         > 
             {this.state.items.map((item) => {
               return (
-              <div key={item.productTitle}> 
+              <Product key={item.productTitle}> 
                 <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
                 onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => this.sendAsinBroadcast(item.asin)}></img>
                 <div>{item.productTitle}</div>
                 <div>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></div>
-              </div>
+              </Product>
               )
           })}
         </Carousel>
