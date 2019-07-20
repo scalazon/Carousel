@@ -20,6 +20,7 @@
   display: inline-block;
   width: 15px;
   height: 15px;
+  margin: 5px;
   border-top: 2px solid #000;
   border-right: 2px solid #000;
   transform: rotate(-135deg);
@@ -29,6 +30,7 @@
 .right {
   width: 15px;
   height: 15px;
+  margin: 5px;
   border-top: 2px solid #000;
   border-right: 2px solid #000;
   transform: rotate(45deg);
