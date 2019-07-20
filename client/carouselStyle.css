@@ -1,0 +1,38 @@
+.eachProduct:hover {
+    /* color: blue */
+    transition: transform .5s ease;
+    transform: scale(1.04);
+}
+
+.priceC {
+   color: #B12704; 
+}
+
+.nameOfProduct {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: 130px;
+}
+
+.left {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(-135deg);
+  justify-content: left;
+}
+
+.right {
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+  justify-content: right;
+}
