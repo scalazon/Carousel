@@ -480,9 +480,9 @@ eval("\nvar content = __webpack_require__(/*! !../../css-loader/dist/cjs.js!./fo
   !*** ./node_modules/font-awesome/fonts/fontawesome-webfont.eot ***!
   \*****************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:1)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.eot?");
+eval("module.exports = __webpack_require__.p + \"fonts/fontawesome-webfont.eot\";\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.eot?");
 
 /***/ }),
 
@@ -491,9 +491,9 @@ eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:1)\\n
   !*** ./node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0 ***!
   \*************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:1)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.eot?");
+eval("module.exports = __webpack_require__.p + \"fonts/fontawesome-webfont.eot\";\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.eot?");
 
 /***/ }),
 
@@ -502,9 +502,9 @@ eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:1)\\n
   !*** ./node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0 ***!
   \*************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> <?xml version=\\\"1.0\\\" standalone=\\\"no\\\"?>\\n| <!DOCTYPE svg PUBLIC \\\"-//W3C//DTD SVG 1.1//EN\\\" \\\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\\\" >\\n| <svg>\");\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.svg?");
+eval("module.exports = __webpack_require__.p + \"fonts/fontawesome-webfont.svg\";\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.svg?");
 
 /***/ }),
 
@@ -513,9 +513,9 @@ eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may ne
   !*** ./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0 ***!
   \*************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected character '\\u0000' (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?");
+eval("module.exports = __webpack_require__.p + \"fonts/fontawesome-webfont.ttf\";\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?");
 
 /***/ }),
 
@@ -524,9 +524,9 @@ eval("throw new Error(\"Module parse failed: Unexpected character '\\u0000' (1:0
   !*** ./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 ***!
   \***************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected character '\\u0000' (1:4)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?");
+eval("module.exports = __webpack_require__.p + \"fonts/fontawesome-webfont.woff2\";\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?");
 
 /***/ }),
 
@@ -535,9 +535,9 @@ eval("throw new Error(\"Module parse failed: Unexpected character '\\u0000' (1:4
   !*** ./node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0 ***!
   \**************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected character '\\u0000' (1:4)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.woff?");
+eval("module.exports = __webpack_require__.p + \"fonts/fontawesome-webfont.woff\";\n\n//# sourceURL=webpack:///./node_modules/font-awesome/fonts/fontawesome-webfont.woff?");
 
 /***/ }),
 
