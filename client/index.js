@@ -63,6 +63,7 @@ class App extends Component {
         slidesPerPage={6}
         slidesPerScroll={2}
         slides={[]}
+        infinite
         breakpoints={{
           1024: { // these props will be applied when screen width is less than 1024px
             slidesPerPage: 3,
