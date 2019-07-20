@@ -69,7 +69,7 @@ class App extends Component {
             clickToChange: false,
             centered: false,
             arrows: true,
-            infinite: false,
+            infinite: true,
           },
           600: {
             slidesPerPage: 2,
@@ -77,7 +77,7 @@ class App extends Component {
             clickToChange: false,
             centered: false,
             animationSpeed: 2000,
-            infinite: false,
+            infinite: true,
           },
           480: {
             slidesPerPage: 1,
@@ -85,7 +85,7 @@ class App extends Component {
             clickToChange: false,
             centered: false,
             animationSpeed: 2000,
-            infinite: false,
+            infinite: true,
           }
         }}
         arrows
