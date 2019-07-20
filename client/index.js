@@ -28,12 +28,7 @@ class App extends Component {
         .then((response) => {
           this.setState({
             items: response.data
-          }).then((this.state.items.map((item) => {
-              this.setState({
-                images: this.state.images.push(`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`)
-              })
-            console.log(items);
-          })))
+          })
         }).catch((err) => {
           console.log('Err in componentDidMount:', err);
         })
@@ -71,7 +66,19 @@ class App extends Component {
         slidesPerScroll={2}
         slides={[1,2,3,4,5,6,7,8,9,0,10]}
         arrows
-        />
+        > 
+            {this.state.items.map((item) => {
+              return (
+              <div key={item.productTitle}> 
+                <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
+                //onLoad={() => window.dispatchEvent(new Event('resize'))}
+                onClick={() => this.sendAsinBroadcast(item.asin)}></img>
+                <div>{item.productTitle}</div>
+                <div>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></div>
+              </div>
+              )
+          })}
+        </Carousel>
 
     );
   }

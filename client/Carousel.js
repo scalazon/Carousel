@@ -4,27 +4,28 @@ import styled from 'styled-components';
 
 
 
-const HackCarousel = (props) => {
+// const HackCarousel = (props) => {
 
-  let slides = <div key={item.productTitle} onClick={props.handleClick}> 
-   <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
-                   //onLoad={() => window.dispatchEvent(new Event('resize'))}
-   onClick={() => props.sendAsinBroadcast(item.asin)}></img>
-   {item.productTitle}
-   <div>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img>
- </div>
- </div>
-  return(
+//             props.items.map((item) => {
+//               return(
+//               <div key={item.productTitle} onClick={props.handleClick}> 
+//                 <img src={`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`} height="160" width="120"
+//                 //onLoad={() => window.dispatchEvent(new Event('resize'))}
+//                 onClick={() => props.sendAsinBroadcast(item.asin)}></img>
+//                 <div>{item.productTitle}</div>
+//                 <div>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></div>
+//               </div>
+              
     
-    <HackCarousel
-      slidesPerPage={5}
-      slidesPerScroll={5}
-      slides={props.slides}
-      arrows
-    ></HackCarousel>
+//     <HackCarousel
+//       slidesPerPage={5}
+//       slidesPerScroll={5}
+//       slides={props.slides}
+//       arrows
+//     ></HackCarousel>
   
-  )
-}
+//   )
+// }
 
 
 
