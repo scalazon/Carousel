@@ -82,8 +82,9 @@ class App extends Component {
       <Carousel 
         items={this.state.items} 
         sendAsinBroadcast={this.sendAsinBroadcast}
-        arrowLeft={<Icon className="left" name="arrow-left" />}
-        arrowRight={<Icon className="right" name="arrow-right" />}
+        arrowLeft={<Icon className="left" />}
+        arrowRight={<Icon className="right" />}
+        addArrowClickHandler
         slidesPerPage={6}
         slidesPerScroll={2}
         slides={[]}
