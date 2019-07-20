@@ -22,6 +22,7 @@
     "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-fa": "^5.0.0",
     "react-loadable": "^5.4.0",
     "react-router-dom": "^4.2.2",
     "react-slick": "^0.24.0",
