@@ -76,6 +76,8 @@ class App extends Component {
     // }
 
     return (
+      <>
+      <h2>Sponsored products</h2>
       <Carousel 
         items={this.state.items} 
         sendAsinBroadcast={this.sendAsinBroadcast}
@@ -83,7 +85,7 @@ class App extends Component {
         arrowRight={<Icon className="right" name="arrow-right" />}
         slidesPerPage={6}
         slidesPerScroll={2}
-        slides={[1,2,3,4,5,6,7,8,9,0,10]}
+        slides={[]}
         breakpoints={{
           1000: { // these props will be applied when screen width is less than 1000px
             slidesPerPage: 2,
@@ -110,11 +112,12 @@ class App extends Component {
                 onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => this.sendAsinBroadcast(item.asin)}></img>
                 <div>{item.productTitle}</div>
-                <div>${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></div>
+                <div color="#B12704">${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></div>
               </Product>
               )
           })}
         </Carousel>
+        </>
 
     );
   }
