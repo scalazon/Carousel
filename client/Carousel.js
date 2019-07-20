@@ -1,6 +1,9 @@
-import React from 'react';
-import Carousel from '@brainhubeu/react-carousel';
-import styled from 'styled-components';
+// import React from 'react';
+// import Carousel from '@brainhubeu/react-carousel';
+// import styled from 'styled-components';
+
+
+// ********* This file is for reference only and has no functional use ***********
 
 
 
@@ -189,4 +192,4 @@ import styled from 'styled-components';
 //     );
 //   }
 
-export default Carousel;
+// export default Carousel;
