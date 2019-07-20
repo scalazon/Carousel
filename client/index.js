@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 //import Slider from "react-slick";
 import axios from 'Axios';
-import Carousel from './Carousel.js';
+import HackCarousel from './Carousel.js';
+import '@brainhubeu/react-carousel/lib/style.css'
+import Carousel from '@brainhubeu/react-carousel';
 
 
 
@@ -13,7 +15,7 @@ class App extends Component {
     this.state = {
       currentlyDisplayed : {},
       items: [],
-      currentHover: '',
+      images:[],
       itemClicked: false //when changed to true, send the asin of the currentHover
     };
 
@@ -26,8 +28,12 @@ class App extends Component {
         .then((response) => {
           this.setState({
             items: response.data
-          })
-          console.log(response);
+          }).then((this.state.items.map((item) => {
+              this.setState({
+                images: this.state.images.push(`https://hackmazon-thumbs.s3.amazonaws.com/Images/${item.asin}_1.jpg`)
+              })
+            console.log(items);
+          })))
         }).catch((err) => {
           console.log('Err in componentDidMount:', err);
         })
@@ -44,12 +50,28 @@ class App extends Component {
     const bc = new BroadcastChannel('product-change');
     bc.postMessage(asin);
   }
+  
+
+  getAllImages() {
+
+  }
+
 
   render() {
+    // let asin = 
+    // let slides = function() {
 
-    //let items = this.state.items.data;
+    // }
+
     return (
-      <Carousel items={this.state.items} sendAsinBroadcast={this.sendAsinBroadcast}/>
+      <Carousel 
+        items={this.state.items} 
+        sendAsinBroadcast={this.sendAsinBroadcast}
+        slidesPerPage={6}
+        slidesPerScroll={2}
+        slides={[1,2,3,4,5,6,7,8,9,0,10]}
+        arrows
+        />
 
     );
   }
