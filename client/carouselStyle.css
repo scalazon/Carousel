@@ -1,0 +1,17 @@
+.eachProduct:hover {
+    /* color: blue */
+    transition: transform .5s ease;
+    transform: scale(1.04);
+}
+
+.priceC {
+   color: #B12704; 
+}
+
+.nameOfProduct {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 130px;
+}
