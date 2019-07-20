@@ -127,7 +127,11 @@ class App extends Component {
                 onLoad={() => window.dispatchEvent(new Event('resize'))}
                 onClick={() => {
                   this.sendAsinBroadcast(item.asin)
-                  this.getRandomItems()
+                  let that = this
+                  setTimeout(function() {
+                    that.getRandomItems()
+                  },200)
+                  
                   }}></img>
                 <div className="nameOfProduct">{item.productTitle}</div>
                 <div className="priceC">${item.price}<img src ="http://www.sclance.com/pngs/amazon-prime-logo-png/amazon_prime_logo_png_31200.png" height="25" width="48"></img></div>
