@@ -82,28 +82,36 @@ class App extends Component {
       <Carousel 
         items={this.state.items} 
         sendAsinBroadcast={this.sendAsinBroadcast}
-        arrowLeft={<Icon className="left" />}
-        arrowRight={<Icon className="right" />}
+        arrowLeft={<Icon className="left" name="left-arrow" />}
+        arrowRight={<Icon className="right" name="right-arrow"/>}
         addArrowClickHandler
         slidesPerPage={6}
         slidesPerScroll={2}
         slides={[]}
         breakpoints={{
-          1000: { // these props will be applied when screen width is less than 1000px
-            slidesPerPage: 2,
+          1024: { // these props will be applied when screen width is less than 1000px
+            slidesPerPage: 3,
             clickToChange: false,
             centered: false,
             arrows: true,
             infinite: false,
           },
-          500: {
-            slidesPerPage: 1,
+          600: {
+            slidesPerPage: 2,
             slidesPerScroll: 1,
             clickToChange: false,
             centered: false,
             animationSpeed: 2000,
             infinite: false,
           },
+          480: {
+            slidesPerPage: 1,
+            slidesPerScroll: 1,
+            clickToChange: false,
+            centered: false,
+            animationSpeed: 2000,
+            infinite: false,
+          }
         }}
         arrows
         > 
