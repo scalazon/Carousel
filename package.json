@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate",
+  "name": "learn-travis-evelyn",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "description": "Simple Travis-CI check for JSHint (Code Linting)",
+  "author": "evelyn",
   "main": "index.js",
   "scripts": {
     "test": "jshint hello.js",
