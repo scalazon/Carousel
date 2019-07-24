@@ -5,7 +5,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jshint hello.js",
     "watch": "webpack --watch",
     "start_local": "nodemon -r dotenv/config server/server.js",
     "seedDB": "nodemon -r dotenv/config database/seedDbServer.js"
