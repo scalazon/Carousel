@@ -27,7 +27,6 @@ app.get('/one', (req, res) => {
 })
 
 
-
 app.get('/api/items', (req, res) => {
   getRandomSample()
   .then(result => {
