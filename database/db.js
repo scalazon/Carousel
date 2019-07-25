@@ -1,11 +1,20 @@
 const mongoose = require('mongoose');
-const MONGO_USER = process.env.MONGO_USER;
-const MONGO_PASSWORD = process.env.MONGO_PASS;
-//console.log(MONGO_PASSWORD)
-const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@fec-ucjmx.mongodb.net/hackmazon?retryWrites=true&w=majority`;
-const options = {
-  useNewUrlParser: true
-};
+// const MONGO_USER = process.env.MONGO_USER;
+// const MONGO_PASSWORD = process.env.MONGO_PASS;
+// //console.log(MONGO_PASSWORD)
+// const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@fec-ucjmx.mongodb.net/hackmazon?retryWrites=true&w=majority`;
+// const options = {
+//   useNewUrlParser: true
+// };
+const Schema = mongoose.Schema;
+
+const productSchema = new Schema({
+  productTitle: String,
+  price: Number,
+  url: String
+});
+
+const itemContents = mongoose.model("itemContents", productSchema);
 
 mongoose.connect(uri, options)
 
@@ -17,25 +26,25 @@ db.once('open', function() {
   console.log('connected to MongoDB')
 });
 
-const productSchema = new mongoose.Schema({
-  url: String,
-  asin: String,
-  productTitle: String,
-  bulletPoints: String,
-  price: Number,
-  category: String,
-  attributes: String,
-  imageNbame: String,
-  TotalImages: Number
+// const productSchema = new mongoose.Schema({
+//   url: String,
+//   asin: String,
+//   productTitle: String,
+//   bulletPoints: String,
+//   price: Number,
+//   category: String,
+//   attributes: String,
+//   imageNbame: String,
+//   TotalImages: Number
 
 
-});
+// });
 
-const Product = db.model('Product', productSchema)
+// const Product = db.model('Product', productSchema)
 
-function getRandomSample() {
-  return Product.aggregate([ { $sample: {size: 14} } ])
-}
+// function getRandomSample() {
+//   return Product.aggregate([ { $sample: {size: 14} } ])
+// }
 
 //finds the category of the currently displayed item
 // function findCategory(ASIN) {

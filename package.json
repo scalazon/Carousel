@@ -5,7 +5,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "jshint hello.js",
+    "test": "jest",
     "watch": "webpack --watch",
     "start_local": "nodemon -r dotenv/config server/server.js",
     "seedDB": "nodemon -r dotenv/config database/seedDbServer.js"
@@ -46,6 +46,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "file-loader": "^4.1.0",
+    "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.0",
