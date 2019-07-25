@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 // const MONGO_PASSWORD = process.env.MONGO_PASS;
 // //console.log(MONGO_PASSWORD)
 // const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@fec-ucjmx.mongodb.net/hackmazon?retryWrites=true&w=majority`;
-// const options = {
-//   useNewUrlParser: true
-// };
-const Schema = mongoose.Schema;
+const options = {
+  useNewUrlParser: true
+};
+const Schema = require('mongoose').Schema;
 
 const productSchema = new Schema({
   productTitle: String,
@@ -14,17 +14,38 @@ const productSchema = new Schema({
   url: String
 });
 
-const itemContents = mongoose.model("itemContents", productSchema);
 
-mongoose.connect(uri, options)
+mongoose.connect('mongodb://localhost:27017/scalazonCarousel', options)
 
 
 const db = mongoose.connection;
+const itemContents = mongoose.model("itemContent", productSchema);
+
+
+
+//const test = new itemContents({productTitle: 'test', price: 1, url: 'testytesty.com'})
+
+// test.save().then(res => {
+//   console.log(res)
+// })
+
+// itemContents.find().then(res => {
+//   console.log(res)
+// })
+
 db.on('error', console.error.bind(console, 'connection error:'));
+
 db.once('open', function() {
   // we're connected!
   console.log('connected to MongoDB')
 });
+
+const getOne = () => {
+
+  
+  return itemContents.findOne({productTitle: 'test'})
+    
+}
 
 // const productSchema = new mongoose.Schema({
 //   url: String,
@@ -105,7 +126,8 @@ function deleteAllProducts() {
 }
 
 module.exports = {
-  getRandomSample,
+  getOne,
+  //getRandomSample,
   dataLoader,
   deleteAllProducts,
 };

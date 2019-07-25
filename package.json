@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest",
     "watch": "webpack --watch",
+    "start-server": "nodemon server/server.js",
     "start_local": "nodemon -r dotenv/config server/server.js",
     "seedDB": "nodemon -r dotenv/config database/seedDbServer.js"
   },
