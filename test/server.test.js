@@ -17,9 +17,9 @@ test('gets response from server', () => {
         })
 })
 
-// // test('retrieves test item from database', () => {
-// //     return axios.get('http://localhost:3003/one')
-// //         .then(response => {
-// //             expect(response.data).toBe('test');
-// //         })
-// // })
+test('retrieves test item from database', () => {
+    return axios.get('http://localhost:3003/one')
+        .then(response => {
+            expect(response.data).toBe('test');
+        })
+})
