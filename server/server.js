@@ -23,7 +23,7 @@ app.get('/one', (req, res) => {
   
   getOne()
   .then(result => res.json(result.productTitle))
-  .catch(err => console.error('whoops'))
+  .catch(err => res.end('error'))
 })
 
 
@@ -33,7 +33,7 @@ app.get('/api/items', (req, res) => {
     res.send(result)
   })
   .catch(err => {
-    console.log('Error in server: ', err)
+    res.end('Error in server: ', err)
   })
 })
 
