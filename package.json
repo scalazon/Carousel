@@ -5,8 +5,9 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack --watch",
+    "start-server": "nodemon server/server.js",
     "start_local": "nodemon -r dotenv/config server/server.js",
     "seedDB": "nodemon -r dotenv/config database/seedDbServer.js"
   },
@@ -46,8 +47,10 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "file-loader": "^4.1.0",
+    "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "style-loader": "^0.23.1",
+    "supertest": "^4.0.2",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2"

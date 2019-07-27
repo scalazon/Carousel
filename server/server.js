@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const { PORT } = require('../config.js');
 const app = express();
-const { getRandomSample } = require('../database/db')
+const { getRandomSample, getOne } = require('../database/db')
 var cors = require('cors')
 
-const port = process.env.PORT || 3003;
+const port = /*process.env.PORT|| */3003;
 app.use(cors());
 app.use('/', express.static('dist'));
 app.use(
@@ -15,6 +15,16 @@ app.use(
   })
 );
 
+app.get('/test', (req, res) => {
+  res.send('done');
+})
+
+app.get('/one', (req, res) => {
+  
+  getOne()
+  .then(result => res.json(result.productTitle))
+  .catch(err => res.end('error'))
+})
 
 
 app.get('/api/items', (req, res) => {
@@ -23,7 +33,7 @@ app.get('/api/items', (req, res) => {
     res.send(result)
   })
   .catch(err => {
-    console.log('Error in server: ', err)
+    res.end('Error in server: ', err)
   })
 })
 

@@ -1,41 +1,71 @@
 const mongoose = require('mongoose');
-const MONGO_USER = process.env.MONGO_USER;
-const MONGO_PASSWORD = process.env.MONGO_PASS;
-//console.log(MONGO_PASSWORD)
-const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@fec-ucjmx.mongodb.net/hackmazon?retryWrites=true&w=majority`;
+// const MONGO_USER = process.env.MONGO_USER;
+// const MONGO_PASSWORD = process.env.MONGO_PASS;
+// //console.log(MONGO_PASSWORD)
+// const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@fec-ucjmx.mongodb.net/hackmazon?retryWrites=true&w=majority`;
 const options = {
   useNewUrlParser: true
 };
+const Schema = require('mongoose').Schema;
 
-mongoose.connect(uri, options)
+const productSchema = new Schema({
+  productTitle: String,
+  price: Number,
+  url: String
+});
+
+
+mongoose.connect('mongodb://localhost:27017/scalazonCarousel', options)
 
 
 const db = mongoose.connection;
+const itemContents = mongoose.model("itemContent", productSchema);
+
+
+
+//const test = new itemContents({productTitle: 'test', price: 1, url: 'testytesty.com'})
+
+// test.save().then(res => {
+//   console.log(res)
+// })
+
+// itemContents.find().then(res => {
+//   console.log(res)
+// })
+
 db.on('error', console.error.bind(console, 'connection error:'));
+
 db.once('open', function() {
   // we're connected!
   console.log('connected to MongoDB')
 });
 
-const productSchema = new mongoose.Schema({
-  url: String,
-  asin: String,
-  productTitle: String,
-  bulletPoints: String,
-  price: Number,
-  category: String,
-  attributes: String,
-  imageNbame: String,
-  TotalImages: Number
+const getOne = () => {
 
-
-});
-
-const Product = db.model('Product', productSchema)
-
-function getRandomSample() {
-  return Product.aggregate([ { $sample: {size: 14} } ])
+  
+  return itemContents.findOne({productTitle: 'test'})
+    
 }
+
+// const productSchema = new mongoose.Schema({
+//   url: String,
+//   asin: String,
+//   productTitle: String,
+//   bulletPoints: String,
+//   price: Number,
+//   category: String,
+//   attributes: String,
+//   imageNbame: String,
+//   TotalImages: Number
+
+
+// });
+
+// const Product = db.model('Product', productSchema)
+
+// function getRandomSample() {
+//   return Product.aggregate([ { $sample: {size: 14} } ])
+// }
 
 //finds the category of the currently displayed item
 // function findCategory(ASIN) {
@@ -96,7 +126,8 @@ function deleteAllProducts() {
 }
 
 module.exports = {
-  getRandomSample,
+  getOne,
+  //getRandomSample,
   dataLoader,
   deleteAllProducts,
 };
